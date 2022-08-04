@@ -272,7 +272,7 @@ function setUp() {
         card.addEventListener('click', flip)
     }
 
-    // setting up the timer 
+    // setting up the timer:
     timerFunc = setInterval(function() {
         if(seconds <= 0) { // defining game over if times out
             clearTimeout(timerFunc)
