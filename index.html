@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Memory Match Card Game</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="styles.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <main>
+            <div class="board">
+                <div class="clicksBar">
+                    <div class="promt">
+                        <span class="promttext">the minimum number of clicks required to find all matches in the worst case set-up scenario:<br>+<span id="extraClicksTooltip"></span> clicks for normal difficulty<br>+0 clicks for hard difficulty<br>hard mode also has different colours of one and the same shape
+                            <div class="moreinfo"><span class="center">More info...</span>
+                                <span class="moreinfotext"><hr><span class="center">Base formula (before adjustment on difficulty):</span><br><code class="center">Clicks = num of cardtiles * 2 - 2</code><br>
+                                <hr><span class="center">Two conditions were taken into considiration:</span><br>
+                                <div class="left">1) the distribution of card tiles is the least beneficial for a player, in particular, 
+                                for every new pair of cards clicked (except for the first two and the last two):
+                                <br>  - first card of a pair is always new (hasn't been in previous pairs);
+                                <br>  - second card of a pair has already been in previous pairs;<br>
+                                that means: an additonal (second) click is always required for every card (except for the last two cards) to match them all;
+                                <br>2) a player makes no mistakes: 
+                                <br>  - never clicks on one and the same card more than two times (except for the last two revealed cards);
+                                <br>  - always clicks only once on each of the last two revealed cards. 
+                                </div><hr> 
+                                </span>
+                            </div>
+                        </span>
+                            </span>
+                        <h3>Clicks left: <span id="clicksLeft"></span></h3>
+                    </div>
+                </div>
+            <div class="cardBoard"><div class="timer"><span id="timer"></span></div></div>
+            <div class="startGame"><span><p>Start</p></span></div>
+            <div class="difficulty">
+                <div class="choose"><span>Choose your difficulty</span></div>
+                <div class="choice">
+                    <span class="normal">Normal</span>
+                    <span class="hard">Hard</span>
+                </div>
+            </div>
+            <div class="endGame">
+                <img id="winningImage" alter="You did it!">
+                <span id="gameOver"></span>
+                <span id="tryAgain"></span>
+                <div id="stats">
+                <span class="endGameText"><span id="endClicksLeft"></span></span>
+                <span class="endGameText"><span id="endTimeLeft"></span></span>
+                 </div>
+            </div>
+            </div>
+        </main>
+        <script type="text/javascript" src="app.js"></script>
+    </body>
+</html>
